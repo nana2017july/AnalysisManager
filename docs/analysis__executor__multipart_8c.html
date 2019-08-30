@@ -93,6 +93,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_analysis_executor___multipart___super.html">CAnalysisExecutor_Multipart_Super</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">private  <a href="struct_c_analysis_executor___multipart___super.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -108,6 +109,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="analysis__executor__multipart_8c.html#a546971b563a1d43a1db36919341d6268ab72d07a1c354258f5c56bace19ae73f2">MultipartStatus_Body</a>, 
 <a class="el" href="analysis__executor__multipart_8c.html#a546971b563a1d43a1db36919341d6268ac2cb1fc6277bdebf5968032ec3ee9e90">MultipartStatus_Boundary</a>
  }</td></tr>
+<tr class="memdesc:a546971b563a1d43a1db36919341d6268"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在、解析している部分を表すステータス。  <a href="analysis__executor__multipart_8c.html#a546971b563a1d43a1db36919341d6268">More...</a><br /></td></tr>
 <tr class="separator:a546971b563a1d43a1db36919341d6268"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -164,13 +166,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>現在、解析している部分を表すステータス。 </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a546971b563a1d43a1db36919341d6268ae16bcd3de69656f14ecf841707f58470"></a>MultipartStatus_Header&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a546971b563a1d43a1db36919341d6268ab72d07a1c354258f5c56bace19ae73f2"></a>MultipartStatus_Body&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a546971b563a1d43a1db36919341d6268ac2cb1fc6277bdebf5968032ec3ee9e90"></a>MultipartStatus_Boundary&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00053">53</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00056">56</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
 
 </div>
 </div>
@@ -194,7 +198,7 @@ Functions</h2></td></tr>
 <p>解析後にマルチパートのパラメタを取得する。パラメタ名をキーにして、パラメタ値を登録されている。 </p>
 <dl class="section return"><dt>Returns</dt><dd>解析した結果で得られたパラメタ </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00259">259</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00263">263</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
 
 </div>
 </div>
@@ -233,12 +237,15 @@ Functions</h2></td></tr>
 <p>コンストラクタ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">targetParamName</td><td>[in] </td></tr>
+    <tr><td class="paramname">table</td><td>[in]解析してパラメタ名と値を設定。apr_table_t に保存されるので値の取得の仕方はaprのリファレンスを参照のこと。 <br />
+ 破壊は利用者側で行う。ただし、通常tableはpoolで作成し管理されるので、破壊はpoolに任せればよい。 </td></tr>
+    <tr><td class="paramname">targetParamName</td><td>[in]現状未使用。""を設定。 </td></tr>
+    <tr><td class="paramname">boundaryStr</td><td>[in]boundary文字列。"¥r¥n--" + boundary　を設定すること。 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00274">274</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00278">278</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
 
 </div>
 </div>

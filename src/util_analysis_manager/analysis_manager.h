@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -146,7 +146,7 @@ typedef enum AnalysisCommandType {
 	AC_POS,
 	///forward(カレント位置を1文字進める)を呼ぶコマンド（置換開始位置を1バイト進める）
 	AC_FORWARD,
-	///forward(カレント位置をN(2以上)文字進める)を呼ぶコマンド（置換開始位置を1バイト進める）
+	///forward(カレント位置をN(2以上)文字進める)を呼ぶコマンド（置換開始位置をNバイト進める）
 	AC_FORWARD_N,
 	///replcae(置換)を呼ぶコマンド
 	AC_REPLACE, 
@@ -212,6 +212,7 @@ typedef union AnalysisCommand {
 @n CAnalysisManager に設定する派生クラスを変えることで処理を変えられる。
 @see #AnalysisCommandType
 @see AnalysisCommand
+@see CAnalysisManager_new()
 */
 typedef struct CAnalysisExecutor {
 	AcCThisIsClass* thisIsClass;

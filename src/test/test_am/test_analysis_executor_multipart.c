@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -101,8 +101,10 @@ static void test_AnalysisExecutor_Multipart_includeFile(){
 
 	//brigade作成 
 	const char* tmp[] = {
-		"--boundXXX\r\n", "Content-Disposition:name=test; \r\n\r\nvall\r\n--boundXXX",
-		"\r\nContent-Disposition: form-data; name=\"test2\"; filename=\"a.txt\"\r\n--boundXXX--\r\n", SCTEST_BT_EOS
+		"--boundXXX\r\n", 
+		"Content-Disposition:name=test; \r\n\r\nvall\r\n--boundXXX",
+		"\r\nContent-Disposition:name=test2; \r\n\r\n\r\n--boundXXX",
+		"\r\nContent-Disposition: form-data; name=\"test3\"; filename=\"a.txt\"\r\n--boundXXX--\r\n", SCTEST_BT_EOS
 	};
 	//printf(tmp[0]);
 	AcBool bl = AC_FALSE;
@@ -130,12 +132,87 @@ static void test_AnalysisExecutor_Multipart_includeFile(){
 
 	//
 	A_EQUALS_STR("vall", apr_table_get(table, "test"), "");
-	A_NULL(apr_table_get(table, "test2"), "");
+	A_EQUALS_STR("", apr_table_get(table, "test2"), "");
+	A_NULL(apr_table_get(table, "test3"), "");
 
 	apr_brigade_destroy(brigade);
 	AcClass_delete(ana.a);
 	sctest_destroy_brigades(bb);
 };
+
+
+
+/**
+準正常系のテスト。悪意のあるユーザからの攻撃を想定したテスト。
+*/
+static void test_AnalysisExecutor_Multipart_invalideBody(){
+	apr_bucket_alloc_t* ba = apr_bucket_alloc_create(sctest_global_pool);
+
+	//brigade作成 
+	const char* tmp[] = {
+		"\r\n", SCTEST_BT_EOS
+	};
+	//printf(tmp[0]);
+	AcBool bl = AC_FALSE;
+	apr_bucket_brigade* resultBB = NULL;
+	apr_table_t* table = apr_table_make(sctest_global_pool, 5);
+	apr_bucket_brigade* brigade = NULL;
+	CAnalysisExecutor* executor = NULL;
+	//
+	apr_bucket_brigade** bb = sctest_createBucketBrigade(sctest_global_pool, ba, tmp);
+
+	_Temp ana;
+
+
+	//--------------------------------------------------------------------
+	//--boundaryもヘッダもないパターン-------------------------------
+	//--------------------------------------------------------------------
+	//生成
+	executor = (CAnalysisExecutor*)CAnalysisExecutor_Multipart_new(table, "", "\r\n--boundXXX");
+	ana.a = CAnalysisManager_new(executor, sctest_global_pool, ba, table, bb[0]);
+	//
+	brigade = CAnalysisManager_run(ana.a, NULL);
+	A_NOT_NULL(brigade, "run()");
+	//CANALYSIS_MANAGER_DEBUG_PRINT(ana.a);
+	const apr_table_t* params = CAnalysisExecutor_Multipart_getParams((CAnalysisExecutor_Multipart*)executor);
+
+	//
+	A_TRUE(CAnalysisManager_isEnd(ana.a), "");
+	A_NULL(apr_table_get(table, "test"), "");
+
+	apr_brigade_destroy(brigade);
+	AcClass_delete(ana.a);
+	sctest_destroy_brigades(bb);
+
+	//--------------------------------------------------------------------
+	//--ヘッダはあるがboundaryがないパターン-------------------------------
+	//--------------------------------------------------------------------
+	//brigade作成 
+	const char* tmp2[] = {
+		"\r\n", "Content-Disposition:nam=test; \r\n", SCTEST_BT_EOS
+	};
+	bb = sctest_createBucketBrigade(sctest_global_pool, ba, tmp);
+	//生成
+	executor = (CAnalysisExecutor*)CAnalysisExecutor_Multipart_new(table, "", "\r\n--boundXXX");
+	ana.a = CAnalysisManager_new(executor, sctest_global_pool, ba, table, bb[0]);
+	//
+	brigade = CAnalysisManager_run(ana.a, NULL);
+	A_NOT_NULL(brigade, "run()");
+	//CANALYSIS_MANAGER_DEBUG_PRINT(ana.a);
+	params = CAnalysisExecutor_Multipart_getParams((CAnalysisExecutor_Multipart*)executor);
+
+	//
+	A_TRUE(CAnalysisManager_isEnd(ana.a), "");
+	A_NULL(apr_table_get(table, "test"), "");
+
+	apr_brigade_destroy(brigade);
+	AcClass_delete(ana.a);
+	sctest_destroy_brigades(bb);
+
+};
+
+
+
 
 
 /**
@@ -189,6 +266,7 @@ static void test_AnalysisExecutor_Multipart_errTest(){
 void test_analysis_executor_Multipart(){
 	test_AnalysisExecutor_Multipart_run1();
 	test_AnalysisExecutor_Multipart_includeFile();
+	test_AnalysisExecutor_Multipart_invalideBody();
 	//
 	test_AnalysisExecutor_Multipart_errTest();
 }

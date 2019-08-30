@@ -1,5 +1,10 @@
+[Japanese](https://github.com/nana2017july/AnalysisManager/) | [English](https://github.com/nana2017july/AnalysisManager/blob/master/README.en.md)
 # ƒ{ƒfƒB•”‚ğ•ªÍE’uŠ·‚·‚éApache Module—pƒ‰ƒCƒuƒ‰ƒŠ
 å‚ÉApache Module‚È‚Ç‚Åg—p‚·‚é‚±‚Æ‚ğƒCƒ[ƒW‚µ‚Äì¬‚µ‚Ä‚¢‚é‚ªAŠî–{“I‚É‚ÍAPR‚Ì•â•ƒ‰ƒCƒuƒ‰ƒŠB<br>
+”h¶ƒNƒ‰ƒX‚ğ©ì‚·‚é‚±‚Æ‚ÅŠÈ’P‚ÉHTTPƒ{ƒfƒB•”‚Ì•ªÍ‚â’uŠ·‚ª‚Å‚«‚é‚æ‚¤‚É‚È‚éB<br>
+<br> 
+
+¡apr_bucket_brigade‚ğˆµ‚¤ã‚Å‚Ì–â‘è“_<br>
 apr_bucket_brigade‚ÍA•¶š—ñ‚ğ˜A‘±‚Åˆµ‚¦‚È‚¢–â‘è‚ª‚ ‚èAApache Module‚ÌƒtƒbƒNŠÖ”‚à’f‘±“I‚ÉŒÄ‚Î‚ê‚éB<br>
 ƒtƒbƒNŠÖ”‚Í1‰ñ‚ÌƒŠƒNƒGƒXƒg‚à‚µ‚­‚ÍƒŒƒXƒ|ƒ“ƒX‚Å‚»‚ê‚¼‚ê1“x‚¾‚¯ŒÄ‚Î‚ê‚é‚ÆŠ¨ˆá‚¢‚³‚ê‚Ä‚¢‚é•û‚à‘½‚¢‚©‚Æv‚í‚ê‚éB<br>
 ‚µ‚©‚µAÀÛ‚É‚ÍAHTTPƒ{ƒfƒB•”‚ğ•ªŠ„‚µ‚Äbriagde‚É“ü‚ê‚ÄA‰½“x‚àƒtƒbƒNŠÖ”‚ªŒÄ‚Î‚ê‚é‚½‚ßA•¶š—ñ‚ª’f‘±‚·‚éB<br>
@@ -16,7 +21,9 @@ apr_bucket_brigade‚ÍA•¶š—ñ‚ğ˜A‘±‚Åˆµ‚¦‚È‚¢–â‘è‚ª‚ ‚èAApache Module‚ÌƒtƒbƒNŠÖ
 ”h¶ƒNƒ‰ƒX‚ğì¬‚·‚é‚Æbrigade‚Ì’f‘±«‚ğ‹C‚É‚¹‚¸‚ÉAˆÈ‰º‚Ì‚±‚Æ‚ª‚Å‚«‚Ü‚·B<br>
 * HTTPƒ{ƒfƒB•¶š—ñ‚ÌŒŸõ
 * HTTPƒ{ƒfƒB•¶š—ñ‚Ì’uŠ·
-* ƒ‰ƒCƒuƒ‰ƒŠ‚ğg—p‚µ‚½•”•ªˆê’vAHTMLƒ^ƒO‚Ì’uŠ·‚ğ‚·‚éApache ModuleƒTƒ“ƒvƒ‹
+* InputƒtƒBƒ‹ƒ^AOutputƒtƒBƒ‹ƒ^‚Ç‚¿‚ç‚É‚àg—p‰Â”\
+* bucket‚ğ‚»‚Ì‚Ü‚Ü—˜—p‚·‚é‚Ì‚Å‚ ‚Ü‚èƒƒ‚ƒŠƒŠƒ\[ƒX‚ğÁ”ï‚¹‚¸‚Éˆ—‚Å‚«‚éB
+* ƒ‰ƒCƒuƒ‰ƒŠ‚ğg—p‚µ‚½•”•ªˆê’vAHTMLƒ^ƒO‚Ì’uŠ·‚ğ‚·‚éApache ModuleƒTƒ“ƒvƒ‹‚ ‚è
 
 ’ñ‹Ÿ‚µ‚Ä‚¢‚éApaceh Module‚ÍAƒ‰ƒCƒuƒ‰ƒŠ‚ğg—p‚µ‚½ƒTƒ“ƒvƒ‹‚Å‚·B
 <br>
@@ -25,7 +32,7 @@ apr_bucket_brigade‚ÍA•¶š—ñ‚ğ˜A‘±‚Åˆµ‚¦‚È‚¢–â‘è‚ª‚ ‚èAApache Module‚ÌƒtƒbƒNŠÖ
 ƒ‰ƒCƒZƒ“ƒX‚ÍAApache License, Version 2.0‚Æ‚µ‚Ü‚·B<br>
 <br>
 **yŠÖ”EƒNƒ‰ƒX‚ÌƒhƒLƒ…ƒƒ“ƒgidoxygenjz**<br>
-<!--https://nana2017july.github.io/html_parser/index.html--><br> 
+https://nana2017july.github.io/AnalysisManager/<br> 
 <br>
 
 
@@ -88,18 +95,23 @@ httpd.conf‚Ì‘‚«•û‚ÍŒã‚Ù‚Ç¦‚µ‚Ü‚·B<br>
 <br>
 
 
-## Apaceh ModuleƒTƒ“ƒvƒ‹‚ğ—˜—p‚·‚é‚½‚ß‚Ìhttpd.conf‹Lq
+## Apaceh ModuleƒTƒ“ƒvƒ‹‚ğ—˜—p‚·‚é‚½‚ß‚Ìhttpd.conf‹Lq—á
 ```Apache
 # Load created module
 LoadModule replace_content_module  modules/mod_replace_content.so
 # Output filter setting
 SetOutputFilter REPLACE_CONTENT_OUTPUTFILTER
+# Input filter setting
+SetInputFilter REPLACE_CONTENT_INPUTFILTER
 Header set Last-Modified "Sat, 19 Apr 2014 21:53:07 GMT"
 # replace content setting
 ReplaceContent "tag:true" "head" "<banking >"
 ```
+InputƒtƒBƒ‹ƒ^‚ÆOutputƒtƒBƒ‹ƒ^‚Í“Æ—§‚É“®ì‚µ‚Ü‚·B‚Ç‚¿‚ç‚©‚¾‚¯İ’è‚µ‚Ä‚à“®ì‚·‚éƒTƒ“ƒvƒ‹‚Å‚·B<br>
+<br>
 
 
+### OutputƒtƒBƒ‹ƒ^ƒTƒ“ƒvƒ‹‚Ìà–¾
 OutputFilter‚Ìİ’è‚ÆAReplaceContentƒfƒBƒŒƒNƒeƒBƒu‚Ìİ’è‚ğ‚µ‚Ü‚·B<br>
 ReplaceContent‚Ì‘®‚ÍˆÈ‰º‚Å‚·B<br>
 ```Apache
@@ -118,10 +130,33 @@ ReplaceContent "partial_match" "a" "x"<br>
 Œ‹‰ÊHTTPƒ{ƒfƒBF"123x45"<br>
 
 * example2<br>
-ReplaceContent "tag:false" "head" "<meta >"<br>
+ReplaceContent "tag:false" "head" "\<meta \>"<br>
 “ü—ÍHTTPƒ{ƒfƒBF"\<head\>\</head\>"<br>
 Œ‹‰ÊHTTPƒ{ƒfƒBF"\<head\>\<meta \>\</head\>"<br>
 <br>
+
+
+### InputƒtƒBƒ‹ƒ^ƒTƒ“ƒvƒ‹‚Ìà–¾
+InputƒtƒBƒ‹ƒ^‚Éİ’è‚·‚é‚¾‚¯‚Å“®ì‚µ‚Ü‚·B
+
+* “®ì“à—e<br>
+Multipart‚ÌƒŠƒNƒGƒXƒgˆ—‚Ì‚Æ‚«‚Ì‚İ”½‰‚µAƒtƒ@ƒCƒ‹ˆÈŠO‚Ìƒpƒ‰ƒƒ^‚ğerror.log‚Éo—Í‚µ‚Ü‚·B
+
+```html:sample
+	<form method="POST" action="test.html" enctype="multipart/form-data">
+		<input type="text" name="me;ssage" value="He;llo"/><br>
+		<input type="text" name="test" value="testvalue"/><br>
+		<input type="file" name="file"/><br>
+		<input type="submit" value="SUBMIT"/>
+	</form>
+```
+
+```html:ƒƒOo—ÍŒ‹‰Ê
+	[Mon Aug 12 14:53:45.000255 2019] [:notice] **** paramsTable[me;ssage] = He;llo\n
+	[Mon Aug 12 14:53:45.000255 2019] [:notice] **** paramsTable[test] = testvalue\n
+```
+<br>
+
 
 ## ƒNƒ‰ƒX‚ÌŠÈˆÕ‚Èà–¾<br>
 CŒ¾Œê‚Å‚·‚ªAƒtƒ@ƒCƒ‹‚Æstruct‚ğ‚¤‚Ü‚­g‚¢AC++‚Ìclass‚É‹ß‚¢“®ì‚ğ‚µ‚Ä‚¢‚Ü‚·B<br>
@@ -132,6 +167,7 @@ class‚ğg—p‚·‚é‚½‚ß‚Ìƒ‹[ƒ‹‚ª‚¢‚­‚Â‚©‚ ‚èA]‚¤•K—v‚ª‚ ‚è‚Ü‚·B<br>
 * ƒNƒ‰ƒXƒƒ\ƒbƒh–¼‚Ìæ“ª‚Í•K‚¸ƒNƒ‰ƒX–¼‚É‚µAƒAƒ“ƒ_[ƒo[‚Å‚¤‚µ‚ë‚Éƒƒ\ƒbƒh–¼‚ğ˜AŒ‹‚·‚éB
 * ƒNƒ‰ƒXƒƒ\ƒbƒh‚Ìæ“ª‚Ìˆø”‚Í•K‚¸‘ÎÛƒNƒ‰ƒX‚Ìƒ|ƒCƒ“ƒ^B
 * privateƒƒ\ƒbƒh‚Í.cƒtƒ@ƒCƒ‹“à‚ÅstaticŠÖ”‚É‚·‚é‚±‚Æ‚ÅÀ‘•‚·‚éB
+* private•Ï”‚ÍAuƒNƒ‰ƒX–¼_Superv‚Ìstruct‚Ì’†‚Å’è‹`‚µA—˜—pÒ‚©‚ç‰B•Á‚·‚éB
 * æ“ª‚ª_‚Ìƒwƒbƒ_ƒtƒ@ƒCƒ‹‚Íprivate‚È‚Ì‚Å—˜—pÒ‘¤‚ªinclude‚µ‚Ä‚Í‚È‚ç‚È‚¢B
 
 **‹Lq—á**
@@ -151,7 +187,7 @@ void CBucketController_exportModifiedBrigadeToBrigade(CBucketController* p_this,
 |**ƒNƒ‰ƒX–¼**|**à–¾**|
 |---|---|
 |***CAnalysisManagerƒNƒ‰ƒX***| brigade‚ÌŠÇ—‚ğs‚¢ACAnalysisExecutor‚Ö‚Ìw¦‚ğo‚·ƒNƒ‰ƒXB|
-|***CAnalysisExecutorƒNƒ‰ƒX***| HTTPƒ{ƒfƒB‚Ì•¶š—ñ‚Ì•ªÍ‚â’uŠ·‚ğs‚¤ƒNƒ‰ƒXB©ì‚·‚éB<br>CAnalysisManager‚ª“KØ‚Èƒƒ\ƒbƒh‚ğŒÄ‚Ño‚·B|
+|***CAnalysisExecutorƒNƒ‰ƒX***| ”h¶ƒNƒ‰ƒX‚ğ©ì‚·‚éBHTTPƒ{ƒfƒB‚Ì•¶š—ñ‚Ì•ªÍ‚â’uŠ·‚ğs‚¤ƒNƒ‰ƒXB<br>CAnalysisManager‚ª“KØ‚Èƒƒ\ƒbƒh‚ğŒÄ‚Ño‚·B|
 
 
 <br>
@@ -176,8 +212,81 @@ CAnalysisExecutor_PartialMatch‚Í CAnalysisExecutor ‚Ì”h¶ƒNƒ‰ƒX‚ÅA”h¶ƒNƒ‰ƒX‚Ì
 CAnalysisExecutor_PartialMatch‚Íw’è‚Ì•¶š—ñ"a"‚ªA•”•ªˆê’v‚µ‚½‚Æ‚«‚É’uŠ·•¶š"x"‚Å’uŠ·‚·‚éB<br>
 <br>
 
-**yCAnalysisExecutor‚Ì”h¶ƒNƒ‰ƒX‚Ìì‚è•ûz**<br>
+### CAnalysisExecutor‚Ì”h¶ƒNƒ‰ƒX‚Ìì‚è•û<br>
 CAnalysisExecutor‚Ì”h¶ƒNƒ‰ƒX‚ÍAƒƒ\ƒbƒh‚ğstatic‚Åì¬‚µAŠÖ”ƒ|ƒCƒ“ƒ^‚ğeƒNƒ‰ƒX‚Éİ’è‚µ‚Äì¬‚·‚éB<br>
+Bucket‚©‚ç‚Ì•¶š‚Ì“Ç‚İ‚İ‚âABucketŠÔ‚Ì•¶š—ñ‚Ì’f—ô‚ÍCAnalysisManagerƒNƒ‰ƒX‚ª‹zû‚µ‚Ä‚­‚ê‚é‚Ì‚Å‹C‚É‚µ‚È‚­‚Ä‚æ‚¢B<br>
+<br>
+**CAnalysisExecutor‚Ì”h¶ƒNƒ‰ƒX‚Ìƒ|ƒCƒ“ƒg**
+
+* CAnalysisExecutor‚Ì”h¶ƒNƒ‰ƒX‚ÍAHTTP‚Ìƒ{ƒfƒB•”‚ğ1ƒoƒCƒg‚¸‚Âó‚¯æ‚éB
+* ’uŠ·ŠJnˆÊ’u‚Æ‚¢‚¤ŠT”O‚ª‘¶İ‚µA‚±‚ÌˆÊ’u‚ğŠJnˆÊ’u‚É‚µ‚Äw’è‚ÌƒoƒCƒg”•ª‚ğ’uŠ·‚Å‚«‚éB
+* ’uŠ·ŠJnˆÊ’u‚ÍˆÚ“®‚Å‚«‚é‚ªA‘O‚É‚µ‚©i‚ß‚È‚¢B
+* “Ç‚İ‚İˆÊ’u(POS)‚Æ‚¢‚¤ŠT”O‚ª‘¶İ‚µA’uŠ·ŠJnˆÊ’u‚ğ‹N“_‚Éw’è‚ÌˆÊ’u‚Ì‚PƒoƒCƒg‚ğ“Ç‚İ‚ß‚éB
+* “Ç‚İ‚İˆÊ’u‚ÍA’uŠ·ŠJnˆÊ’u‚©‚ç‘O•û‚É‚µ‚©w’è‚Å‚«‚È‚¢‚ªA©—R‚ÈˆÊ’u‚ğw’è‚Å‚«‚éB
+* ’uŠ·ŠJnˆÊ’uA“Ç‚İ‚İˆÊ’u‚ÍCAnalysisExecutor‚Ì”h¶ƒNƒ‰ƒX‚©‚çw’è‚Å‚«‚éB(ƒRƒ}ƒ“ƒh‚Æ‚µ‚Äw’è‚·‚é)
+* ƒRƒ}ƒ“ƒh‚Í’†~irejectj‚³‚ê‚é‚±‚Æ‚à‚ ‚èA‚»‚Ìê‡‚ÍFORWARD‚ªŒÄ‚Î‚êreject‚³‚ê‚½‚±‚Æ‚ª‚°‚ç‚ê‚éB
+* reject‚³‚ê‚½ê‡‚ÍA¡‚Ü‚Å‚Ìˆ—‚ğ’†~‚µAV‚½‚É“r’†‚©‚çˆ—‚ğŠJn‚·‚é‚æ‚¤‚ÉƒvƒƒOƒ‰ƒ€İŒv‚·‚é‚±‚ÆB
+* ƒRƒ}ƒ“ƒh‚Ìw’è‚Ìd•û‚É‚æ‚Á‚Ä‚Í–³ŒÀƒ‹[ƒv‚É‚È‚è‚¤‚é‚ªA–³ŒÀƒ‹[ƒv‚É‚È‚ç‚È‚¢‚æ‚¤‚É‚·‚é‚±‚ÆB
+<br>
+<br>
+
+**ƒRƒ}ƒ“ƒhAnalysisCommand‚Ìd—l**
+
+union‚Å\¬‚³‚êAƒRƒ}ƒ“ƒh–ˆ‚Ég—p‚·‚éstruct‚ğ•Ï‚¦‚éB<br>
+
+```cpp
+//AnalysisCommand‚Ì’è‹`
+typedef union {
+	AnalysisCommandType type;
+
+	struct {
+		AnalysisCommandType type;
+		size_t pos;
+	} pos;
+
+	struct {
+		AnalysisCommandType type;
+	} forward;
+
+	struct {
+		AnalysisCommandType type;
+		size_t len;
+	} forward_n;
+
+	struct {
+		AnalysisCommandType type;
+		size_t len;
+		const char* replacement;
+	} replace;
+
+	struct {
+		AnalysisCommandType type;
+		size_t status;
+		const char* replacement;
+	} end;
+}AnalysisCommand;
+```
+```cpp
+//g—p—á
+AnalysisCommand nextCmd;
+nextCmd.type = AC_FORWARD_N;
+nextCmd.forward_n.len = 5;
+```
+
+**yŠe€–Ú‚Ìà–¾z**<br>
+<table>
+<tr><th style="width:50px;">struct–¼<br>(ƒRƒ}ƒ“ƒh–¼)</th><th style="width:30px;">•Ï”</th><th>à–¾</th></tr>
+<tr><th rowspan="2">pos</th><td>type</td><td>AC_POS‚ğİ’è</td></tr>
+<tr><td>pos</td><td>“Ç‚İ‚İˆÊ’u‚ğw’èB<br>w’è‚µ‚½ˆÊ’u‚ªEOS‚ğ’´‚¦‚éê‡‚ÍPOSŠÖ”‚ªŒÄ‚Î‚êEOS‚ğ’´‚¦‚½‚±‚Æ‚ª‚°‚ç‚ê‚éB</td></tr>
+<tr><th>forward</th><td>type</td><td>AC_FORWARD‚ğİ’èB’uŠ·ŠJnˆÊ’u‚ğ1ƒoƒCƒgi‚ß‚éBEOS‚¾‚Á‚½ê‡‚ÍI—¹‚µAFORWARDŠÖ”‚ÍŒÄ‚Î‚ê‚È‚¢B</td></tr>
+<tr><th rowspan="2">forward_n</th><td>type</td><td>AC_FORWARD_N‚ğİ’èB’uŠ·ŠJnˆÊ’u‚ğNƒoƒCƒgi‚ßAFORWARDŠÖ”‚ğŒÄ‚ÔB<br>EOS‚É‚È‚Á‚½ê‡‚ÍI—¹‚µAFORWARDŠÖ”‚ÍŒÄ‚Î‚ê‚È‚¢B</td></tr>
+<tr><td>len</td><td>i‚ß‚éNƒoƒCƒg‚ğİ’è‚·‚éB</td></tr>
+<tr><th rowspan="3">replace</th><td>type</td><td>AC_REPLACE‚ğİ’èB’uŠ·ŠJnˆÊ’u‚©‚çw’è‚ÌƒoƒCƒg”‚ğ’uŠ·‚·‚éB</td></tr>
+<tr><td>len</td><td>’uŠ·‚·‚éƒoƒCƒg‚ğİ’è‚·‚éB</td></tr>
+<tr><td>replacement</td><td>’uŠ·•¶š—ñ‚ğİ’è‚·‚éB</td></tr>
+</table>
+
+
 
 **ŒöŠJ‚·‚éƒNƒ‰ƒXéŒ¾struct‚Ìì¬‚Ì—á: header.h**
 
@@ -225,7 +334,7 @@ static const AnalysisCommand CAnalysisExecutor_PartialMatch_replace(CAnalysisExe
 
 ///w’è‚ÌˆÊ’u‚Ì•¶š‚ğæ“¾‚·‚éê‡‚ÉŒÄ‚Î‚ê‚éB
 static const AnalysisCommand CAnalysisExecutor_PartialMatch_pos(CAnalysisExecutor* p_this, 
-	const AnalysisCommand cmd, const char c) 
+	const AnalysisCommand cmd, const char c, const AcBool isEos) 
 {
 	...
 }
@@ -270,12 +379,22 @@ CAnalysisExecutor‚Íó“®“I‚ÈƒNƒ‰ƒX‚ÅAƒCƒxƒ“ƒgƒhƒŠƒuƒ“‚É‹ß‚¢“®ì‚ğ‚·‚éB<br>
 |---|---|
 |***CAnalysisExecutor_Xxxx_start()***| ˆ—‚Ìˆê”ÔÅ‰‚ÌŠJn‚ÉŒÄ‚Î‚ê‚éB©g‚Ì‰Šú‰»ˆ—‚ğÀ‘•‚·‚éB|
 |***CAnalysisExecutor_Xxxx_forward()***| ’uŠ·ŠJnˆÊ’u‚ğ1ƒoƒCƒgi‚ß‚½‚Æ‚«‚ÉA“Ç‚İ‚ñ‚¾1ƒoƒCƒg‚ğˆø”‚É‚µ‚ÄŒÄ‚Î‚ê‚éB<br>’uŠ·ŠJnˆÊ’u‚Æ‚È‚è‚¤‚é‚©‚ğ”»•Ê‚·‚éˆ—‚ğÀ‘•‚·‚éB<br>’uŠ·ŠJn‚Æ‚È‚è‚¤‚éê‡A’Êí‚Ípos‚ÅŸ‚Ì1•¶š‚ğ“Ç‚İ‚Şw¦‚ğo‚·B|
-|***CAnalysisExecutor_Xxxx_pos()***| ’uŠ·ŠJnˆÊ’u‚ğˆÚ“®‚³‚¹‚¸‚ÉAw’è‚ÌˆÊ’u‚Ì1ƒoƒCƒg‚ğ“Ç‚İ‚ñ‚¾‚Æ‚«‚ÉŒÄ‚Î‚ê‚éB<br>“Ç‚İ‚ñ‚¾•¶š‚ª’uŠ·‘ÎÛ‚Æƒ}ƒbƒ`‚·‚é‚©‚ğŒŸ¸‚·‚éBƒ}ƒbƒ`‚·‚ê‚Î’uŠ·w¦‚ğo‚·B<br>ƒ}ƒbƒ`‚¹‚¸‚³‚ç‚É“Ç‚İ‚İ‚ª•K—v‚Èê‡‚Í‚³‚ç‚Épos‚ÅŸ‚Ì1•¶š‚ğ“Ç‚İ‚Şw¦‚ğo‚·B|
-|***CAnalysisExecutor_Xxxx_replace()***| ’uŠ·ÀsŒã‚ÉŒÄ‚Î‚ê‚éB<br>’Êí‚Í’uŠ·ŠJnˆÊ’u‚ğ1ƒoƒCƒgi‚ß‚ÄA’uŠ·ŠJnˆÊ’u‚ğ‚³‚ª‚·ˆ—‚ÉˆÚs‚³‚¹‚éB|
-|***CAnalysisExecutor_Xxxx_end()***| birgadeˆ—‚ªI‚í‚Á‚½‚Æ‚«‚ÉŒÄ‚Î‚ê‚éB<br>HTTPƒ{ƒfƒB‚Ìˆê”ÔÅŒã‚ÌˆÊ’u‚É•¶š—ñ‚ğ’Ç‰Á‚·‚éˆ—‚È‚Ç‚ª‚Å‚«‚éB|
+|***CAnalysisExecutor_Xxxx_pos()***| w’è‚Ì“Ç‚İ‚İˆÊ’u‚Ì1ƒoƒCƒg‚ğ“Ç‚İ‚İAŒÄ‚Î‚ê‚éB<br>“Ç‚İ‚ñ‚¾•¶š‚ª’uŠ·‘ÎÛ‚Æƒ}ƒbƒ`‚·‚é‚©‚ğŒŸ¸‚µAƒ}ƒbƒ`‚·‚ê‚Î’uŠ·w¦‚ğo‚·‚æ‚¤‚ÉÀ‘•‚·‚éB<br>ƒ}ƒbƒ`‚¹‚¸‚³‚ç‚É“Ç‚İ‚İ‚ª•K—v‚Èê‡‚Í‚³‚ç‚Épos‚ÅŸ‚Ì1•¶š‚ğ“Ç‚İ‚Şw¦‚ğo‚·B|
+|***CAnalysisExecutor_Xxxx_replace()***| ’uŠ·ÀsŒã‚ÉŒÄ‚Î‚ê‚éB<br>’Êí‚Í’uŠ·ŠJnˆÊ’u‚ğ1ƒoƒCƒgi‚ß‚ÄA’uŠ·ŠJnˆÊ’u‚ğ‚³‚ª‚·ˆ—‚ÉˆÚs‚³‚¹‚é‚æ‚¤‚ÉÀ‘•‚·‚éB|
+|***CAnalysisExecutor_Xxxx_end()***| EOS(Brigadeˆ—‚ª‘S‚ÄI—¹)‚ª—ˆ‚½Œã‚ÉŒÄ‚Î‚ê‚éB<br>HTTPƒ{ƒfƒB‚Ìˆê”ÔÅŒã‚ÌˆÊ’u‚É•¶š—ñ‚ğ’Ç‰Á‚·‚éˆ—‚È‚Ç‚ª‚Å‚«‚éB|
 
 <br>
 <br>
 
 
+## ‹ï‘Ì“I‚Èg—p—á‚Íƒ\[ƒX‚ğQÆ‚Ì‚±‚Æ
+### Apache Module‚Ìì¬ƒTƒ“ƒvƒ‹
+https://github.com/nana2017july/AnalysisManager/blob/master/src/mod_replace_content/dllmain.c
+<br>
+### AnalysisExecutorƒNƒ‰ƒX‚Ìì¬ƒTƒ“ƒvƒ‹
+https://github.com/nana2017july/AnalysisManager/blob/master/src/util_analysis_manager/analysis_executor_partial_match.c
 
+@‘¼‚ÌAnalysisExecutor”h¶ƒNƒ‰ƒX‚àQÆ
+@
+@
+@

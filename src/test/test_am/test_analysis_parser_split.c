@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -130,6 +130,7 @@ static void test_CAnalysisParser_Split_overStockBuffer(){
 	A_EQUALS(AnalysisParserStatus_Searching, v.s->status, "searching");
 	CAnalysisParser_accept(v.p, '\r');
 	A_EQUALS(AnalysisParserStatus_Matching, v.s->status, "matching");
+	A_FALSE(v.s->isEnd, "isEnd");
 	CAnalysisParser_accept(v.p, '\n');
 	A_EQUALS(AnalysisParserStatus_Matched, v.s->status, "matched");
 	A_TRUE(v.s->isEnd, "isEnd");

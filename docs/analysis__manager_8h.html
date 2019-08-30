@@ -307,7 +307,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analysis__manager_8h_source.html#l00288">288</a> of file <a class="el" href="analysis__manager_8h_source.html">analysis_manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__manager_8h_source.html#l00289">289</a> of file <a class="el" href="analysis__manager_8h_source.html">analysis_manager.h</a>.</p>
 
 </div>
 </div>
@@ -327,7 +327,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analysis__manager_8h_source.html#l00333">333</a> of file <a class="el" href="analysis__manager_8h_source.html">analysis_manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__manager_8h_source.html#l00334">334</a> of file <a class="el" href="analysis__manager_8h_source.html">analysis_manager.h</a>.</p>
 
 </div>
 </div>
@@ -419,7 +419,9 @@ Variables</h2></td></tr>
  <a class="el" href="struct_c_analysis_manager.html" title="文字を解析し、置換等の操作を管理するクラスの親クラス(派生クラスなし) @detail 【仕様】   主に以下の概念がある。   ・置換開始位置・・・現在の置換開始位置。前に１バイトずつ進めることができ...">CAnalysisManager</a> に設定する派生クラスを変えることで処理を変えられる。 </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="analysis__manager_8h.html#aa7a44f65f9bf93dadc8eb3559f0060d5" title="解析実行用のコマンドの種類を表す。">AnalysisCommandType</a> </dd>
 <dd>
-<a class="el" href="union_analysis_command.html" title="次に実施する操作を CAnalysisExecutor から指定するための情報の共用体。   AnalysisCommandType 毎に使用する構造体が違う。">AnalysisCommand</a> </dd></dl>
+<a class="el" href="union_analysis_command.html" title="次に実施する操作を CAnalysisExecutor から指定するための情報の共用体。   AnalysisCommandType 毎に使用する構造体が違う。">AnalysisCommand</a> </dd>
+<dd>
+<a class="el" href="analysis__manager_8c.html#a9c8b8be5ae11f7386410adf72351605d" title="コンストラクタ。クラスを生成する。">CAnalysisManager_new()</a> </dd></dl>
 
 </div>
 </div>
@@ -517,7 +519,7 @@ Variables</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="ae14e1d2cec57f1704885aafb817541d1a7c0c39b889225b059f9387e552e06d33"></a>AC_FORWARD&#160;</td><td class="fielddoc"><p>forward(カレント位置を1文字進める)を呼ぶコマンド（置換開始位置を1バイト進める） </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae14e1d2cec57f1704885aafb817541d1a70655cdcf037a2efe920a265a7da2c21"></a>AC_FORWARD_N&#160;</td><td class="fielddoc"><p>forward(カレント位置をN(2以上)文字進める)を呼ぶコマンド（置換開始位置を1バイト進める） </p>
+<tr><td class="fieldname"><a id="ae14e1d2cec57f1704885aafb817541d1a70655cdcf037a2efe920a265a7da2c21"></a>AC_FORWARD_N&#160;</td><td class="fielddoc"><p>forward(カレント位置をN(2以上)文字進める)を呼ぶコマンド（置換開始位置をNバイト進める） </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ae14e1d2cec57f1704885aafb817541d1ad6754263331e6ff27302040a08ca07e2"></a>AC_REPLACE&#160;</td><td class="fielddoc"><p>replcae(置換)を呼ぶコマンド </p>
 </td></tr>

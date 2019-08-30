@@ -97,7 +97,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_analysis_executor___multipart.html">CAnalysisExecutor_Multipart</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_c_analysis_executor.html" title="文字を解析し、置換等の実行をするクラスの親クラス。   CAnalysisManager 内部でから呼び出されるクラスだが、処理の実体はこのクラスにある。   メソッドの実装は派生クラスで定義される。 ...">CAnalysisExecutor</a> の派生クラス。マルチパートのリクエストを解析してパラメタを取得する。 <br />
  現状ではファイル（filenameがヘッダに存在するもの）は取得しない。メモリを多く消費してしまうためである。 <br />
- multipart/mixedのような二重構造には対応していない。  <a href="struct_c_analysis_executor___multipart.html#details">More...</a><br /></td></tr>
+ multipart/mixedのような二重構造には対応していない。 <br />
+ 取得したパラメタの名前と値の文字列の長さには最大桁数があり、最大桁数 MULTIPART_NAME_MAX_LEN , MULTIPART_VALUE_LEN と同じ長さの場合、 <br />
+ もっと長い可能性もある。  <a href="struct_c_analysis_executor___multipart.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -170,7 +172,7 @@ Functions</h2></td></tr>
  タグの開始（＜）を見つけたら、AC_POSでタグの終了（＞）を見つける。 <br />
  その後、タグ自体を置換する場合はAC_REPLACEを実行。 <br />
  タグの後ろを置換する場合はAC_FORWARDでタグの終了位置まで移動してから、AC_REPLACEを実行。 </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="analysis__manager_8c.html#a9c8b8be5ae11f7386410adf72351605d" title="コンストラクタ。クラスを生成する。">CAnalysisManager_new()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="analysis__executor__htmltag__replace_8c.html#adc5d55ab10a3335acd28f01845fc8347" title="コンストラクタ">CAnalysisExecutor_HtmlTagReplace_new()</a> </dd></dl>
 
 </div>
 </div>
@@ -209,7 +211,7 @@ Functions</h2></td></tr>
 
 <p>コンストラクタ。 </p>
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__donothing_8c_source.html#l00130">130</a> of file <a class="el" href="analysis__executor__donothing_8c_source.html">analysis_executor_donothing.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__donothing_8c_source.html#l00132">132</a> of file <a class="el" href="analysis__executor__donothing_8c_source.html">analysis_executor_donothing.c</a>.</p>
 
 </div>
 </div>
@@ -278,7 +280,7 @@ Functions</h2></td></tr>
 <p>解析後にマルチパートのパラメタを取得する。パラメタ名をキーにして、パラメタ値を登録されている。 </p>
 <dl class="section return"><dt>Returns</dt><dd>解析した結果で得られたパラメタ </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00259">259</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00263">263</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
 
 </div>
 </div>
@@ -317,12 +319,15 @@ Functions</h2></td></tr>
 <p>コンストラクタ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">targetParamName</td><td>[in] </td></tr>
+    <tr><td class="paramname">table</td><td>[in]解析してパラメタ名と値を設定。apr_table_t に保存されるので値の取得の仕方はaprのリファレンスを参照のこと。 <br />
+ 破壊は利用者側で行う。ただし、通常tableはpoolで作成し管理されるので、破壊はpoolに任せればよい。 </td></tr>
+    <tr><td class="paramname">targetParamName</td><td>[in]現状未使用。""を設定。 </td></tr>
+    <tr><td class="paramname">boundaryStr</td><td>[in]boundary文字列。"¥r¥n--" + boundary　を設定すること。 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00274">274</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__multipart_8c_source.html#l00278">278</a> of file <a class="el" href="analysis__executor__multipart_8c_source.html">analysis_executor_multipart.c</a>.</p>
 
 </div>
 </div>

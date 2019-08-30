@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -156,6 +156,18 @@ void ac_printf(const char* msg, ...);
 @return strKeyValueArrayタイプの配列{"a", "1", "b",NULL, "c", "3", NULL}のような配列が返る。free(ret)で解放できる。
 @n     領域確保に失敗した場合はNULL。
 @note   trimはしない。
+*/
+char** ac_splitKeyValueArrayWithQuote(const char* str, const char* seps, AcBool isSplitEq, size_t maxSize);
+
+
+/**
+@brief HTTPヘッダ値の key=value; 形式をパースして配列にして返す。
+@n     前後の空白が削除され、ダブルクォートが削除された文字列が返る。クォート内のエスケープ文字\も削除される。
+@n     ac_splitKeyValueArrayWithQuote() にtrimとダブルクォートの削除を実行した結果を返す。
+@return KeyValueArrayタイプの配列{"a", "1", "b",NULL, "c", "3", NULL}のような配列が返る。free(ret)で解放できる。
+@see   ac_splitKeyValueArrayWithQuote
+@see   ac_trimArray
+@see   ac_removeQuoteArray
 */
 char** ac_splitHttpHeaderValue(const char* str, const char* seps, AcBool isSplitEq, size_t maxSize);
 

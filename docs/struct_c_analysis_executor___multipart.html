@@ -70,7 +70,9 @@ $(function() {
 
 <p><a class="el" href="struct_c_analysis_executor.html" title="文字を解析し、置換等の実行をするクラスの親クラス。   CAnalysisManager 内部でから呼び出されるクラスだが、処理の実体はこのクラスにある。   メソッドの実装は派生クラスで定義される。 ...">CAnalysisExecutor</a> の派生クラス。マルチパートのリクエストを解析してパラメタを取得する。 <br />
  現状ではファイル（filenameがヘッダに存在するもの）は取得しない。メモリを多く消費してしまうためである。 <br />
- multipart/mixedのような二重構造には対応していない。  
+ multipart/mixedのような二重構造には対応していない。 <br />
+ 取得したパラメタの名前と値の文字列の長さには最大桁数があり、最大桁数 MULTIPART_NAME_MAX_LEN , MULTIPART_VALUE_LEN と同じ長さの場合、 <br />
+ もっと長い可能性もある。  
  <a href="struct_c_analysis_executor___multipart.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="analysis__executor__impl_8h_source.html">analysis_executor_impl.h</a>&gt;</code></p>
@@ -83,9 +85,12 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="struct_c_analysis_executor.html" title="文字を解析し、置換等の実行をするクラスの親クラス。   CAnalysisManager 内部でから呼び出されるクラスだが、処理の実体はこのクラスにある。   メソッドの実装は派生クラスで定義される。 ...">CAnalysisExecutor</a> の派生クラス。マルチパートのリクエストを解析してパラメタを取得する。 <br />
  現状ではファイル（filenameがヘッダに存在するもの）は取得しない。メモリを多く消費してしまうためである。 <br />
- multipart/mixedのような二重構造には対応していない。 </p>
+ multipart/mixedのような二重構造には対応していない。 <br />
+ 取得したパラメタの名前と値の文字列の長さには最大桁数があり、最大桁数 MULTIPART_NAME_MAX_LEN , MULTIPART_VALUE_LEN と同じ長さの場合、 <br />
+ もっと長い可能性もある。 </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="analysis__executor__impl_8h.html#a6c790aa82e5ec4600400a40044950247" title="コンストラクタ">CAnalysisExecutor_Multipart_new()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__impl_8h_source.html#l00104">104</a> of file <a class="el" href="analysis__executor__impl_8h_source.html">analysis_executor_impl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__impl_8h_source.html#l00107">107</a> of file <a class="el" href="analysis__executor__impl_8h_source.html">analysis_executor_impl.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a90b2170e34db8f9b0d01e7f7e6b919c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90b2170e34db8f9b0d01e7f7e6b919c3">&#9670;&nbsp;</a></span>parentMember</h2>
@@ -99,7 +104,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="analysis__executor__impl_8h_source.html#l00105">105</a> of file <a class="el" href="analysis__executor__impl_8h_source.html">analysis_executor_impl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="analysis__executor__impl_8h_source.html#l00108">108</a> of file <a class="el" href="analysis__executor__impl_8h_source.html">analysis_executor_impl.h</a>.</p>
 
 </div>
 </div>

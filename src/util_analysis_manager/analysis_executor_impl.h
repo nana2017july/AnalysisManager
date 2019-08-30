@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -73,7 +73,7 @@ CAnalysisExecutor_DoNothing* CAnalysisExecutor_DoNothing_new();
 @n タグの開始（＜）を見つけたら、AC_POSでタグの終了（＞）を見つける。
 @n その後、タグ自体を置換する場合はAC_REPLACEを実行。
 @n タグの後ろを置換する場合はAC_FORWARDでタグの終了位置まで移動してから、AC_REPLACEを実行。
-@see CAnalysisManager_new()
+@see CAnalysisExecutor_HtmlTagReplace_new()
 */
 typedef struct CAnalysisExecutor_HtmlTagReplace {
 	CAnalysisExecutor parentMember;
@@ -100,6 +100,9 @@ CAnalysisExecutor_HtmlTagReplace* CAnalysisExecutor_HtmlTagReplace_new(const cha
 @brief CAnalysisExecutor の派生クラス。マルチパートのリクエストを解析してパラメタを取得する。
 @n     現状ではファイル（filenameがヘッダに存在するもの）は取得しない。メモリを多く消費してしまうためである。
 @n     multipart/mixedのような二重構造には対応していない。
+@n     取得したパラメタの名前と値の文字列の長さには最大桁数があり、最大桁数 MULTIPART_NAME_MAX_LEN , MULTIPART_VALUE_LEN と同じ長さの場合、
+@n     もっと長い可能性もある。
+@see CAnalysisExecutor_Multipart_new()
 */
 typedef struct {
 	CAnalysisExecutor parentMember;
@@ -108,7 +111,10 @@ typedef struct {
 
 /**
 コンストラクタ
-@param targetParamName [in]
+@param table       [in]解析してパラメタ名と値を設定。apr_table_t に保存されるので値の取得の仕方はaprのリファレンスを参照のこと。
+@n                     破壊は利用者側で行う。ただし、通常tableはpoolで作成し管理されるので、破壊はpoolに任せればよい。
+@param targetParamName [in]現状未使用。""を設定。
+@param boundaryStr [in]boundary文字列。"\r\n--" + boundary　を設定すること。
 */
 CAnalysisExecutor_Multipart* CAnalysisExecutor_Multipart_new(apr_table_t* table, const char* targetParamStr, const char* boundaryStr);
 

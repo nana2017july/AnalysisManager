@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -61,8 +61,8 @@ CAnalysisParser_Split* CAnalysisParser_Split_new(const char* delimiterStr, size_
 
 @~english
 @brief Get the stocked string.
-@ param str [out] Set and return a pointer to the stocked string.
-@ param len [out] Set and return the length of the stocked string.
+@param str [out] Set and return a pointer to the stocked string.
+@param len [out] Set and return the length of the stocked string.
 */
 void CAnalysisParser_Split_getStockStr(CAnalysisParser_Split* p_this, const char** str, size_t* len);
 
@@ -142,8 +142,8 @@ CAnalysisParser_HttpHeader* CAnalysisParser_HttpHeader_new(const char* headearNa
 
 @~english
 @brief Get the stocked string.
-@ param str [out] Set and return a pointer to the stocked string.
-@ param len [out] Set and return the length of the stocked string.
+@param str [out] Set and return a pointer to the stocked string.
+@param len [out] Set and return the length of the stocked string.
 */
 void CAnalysisParser_HttpHeader_getValue(CAnalysisParser_HttpHeader* p_this, const char** str, size_t* len);
 

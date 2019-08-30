@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -355,11 +355,19 @@ int ac_setPrintFunc(void (*printFunc)(const char* msg, va_list args)){
 
 
 /*
-RFCによると
+RFCによるとHTTPヘッダは、
 ・ダブルクォートでくくられた中は1つのwordとして扱う。
 ・ダブルクォート内は\でエスケープでき、\+1文字　を1文字として扱う。
 */
 char** ac_splitHttpHeaderValue(const char* str, const char* seps, AcBool isSplitEq, size_t maxSize){
+	char** ret = ac_splitKeyValueArrayWithQuote(str, seps, isSplitEq, maxSize);
+	ac_trimArray(ret);
+	ac_removeQuoteArray(ret, '"', '\\');
+	return ret;
+}
+
+
+char** ac_splitKeyValueArrayWithQuote(const char* str, const char* seps, AcBool isSplitEq, size_t maxSize){
 
 	char** ret = (char**)malloc(sizeof(char*) * (maxSize * 2 + 1) + strlen(str) + 1);
 	if(ret == NULL) return NULL;

@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 
 
 /**
+private。
 Bucketを保管する、親クラス(private含む)
 */
 typedef struct CBucketController_Super {
@@ -61,6 +62,7 @@ typedef struct CBucketController_Super {
 
 //------------------------------------------------------------------
 /**
+private。
 CAnalysisExecutorの親クラス(privateの定義の追加)
 */
 typedef struct CAnalysisExecutor_Super {
@@ -82,6 +84,7 @@ typedef struct CAnalysisExecutor_Super {
 
 //------------------------------------------------------------------
 /**
+private。
 BucketManagerの親クラス(privateの定義の追加)
 */
 typedef struct CAnalysisManager_Super {

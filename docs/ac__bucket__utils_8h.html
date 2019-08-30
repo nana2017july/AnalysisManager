@@ -138,8 +138,13 @@ Functions</h2></td></tr>
 <tr class="memitem:abed7c7ff9710ee5df354e9d3edcf6acd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ac__bucket__utils_8h.html#abed7c7ff9710ee5df354e9d3edcf6acd">ac_printf</a> (const char *msg,...)</td></tr>
 <tr class="memdesc:abed7c7ff9710ee5df354e9d3edcf6acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列をprintfフォーマットで指定し、出力する。 <a class="el" href="ac__bucket__utils_8h.html#ac748f5e3dc808b038b243ee050b4421c" title="出力用の関数を設定する。デフォルトでは sctest_printfFunc() (=static関数)が設定されている。   これはprintfで標準出力に文字列を出力する。   以下のようにすればAp...">ac_setPrintFunc()</a> で指定した出力関数を内部で呼び出す。  <a href="#abed7c7ff9710ee5df354e9d3edcf6acd">More...</a><br /></td></tr>
 <tr class="separator:abed7c7ff9710ee5df354e9d3edcf6acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1744bb47a8d800ea8234e8f1b9f1dfb"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ac__bucket__utils_8h.html#ae1744bb47a8d800ea8234e8f1b9f1dfb">ac_splitKeyValueArrayWithQuote</a> (const char *str, const char *seps, <a class="el" href="ac__this__is__class_8h.html#a1f7d9df2064ed227a7782d8e38181e51">AcBool</a> isSplitEq, size_t maxSize)</td></tr>
+<tr class="memdesc:ae1744bb47a8d800ea8234e8f1b9f1dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">「a=1;b;c="3;";」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...  <a href="#ae1744bb47a8d800ea8234e8f1b9f1dfb">More...</a><br /></td></tr>
+<tr class="separator:ae1744bb47a8d800ea8234e8f1b9f1dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28bf526a8816a3b9aa878a97c32c5ee3"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3">ac_splitHttpHeaderValue</a> (const char *str, const char *seps, <a class="el" href="ac__this__is__class_8h.html#a1f7d9df2064ed227a7782d8e38181e51">AcBool</a> isSplitEq, size_t maxSize)</td></tr>
-<tr class="memdesc:a28bf526a8816a3b9aa878a97c32c5ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">「a=1;b;c="3;";」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...  <a href="#a28bf526a8816a3b9aa878a97c32c5ee3">More...</a><br /></td></tr>
+<tr class="memdesc:a28bf526a8816a3b9aa878a97c32c5ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">HTTPヘッダ値の key=value; 形式をパースして配列にして返す。 <br />
+ 前後の空白が削除され、ダブルクォートが削除された文字列が返る。クォート内のエスケープ文字¥も削除される。 <br />
+ <a class="el" href="ac__bucket__utils_8h.html#ae1744bb47a8d800ea8234e8f1b9f1dfb" title="「a=1;b;c=&quot;3;&quot;;」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...">ac_splitKeyValueArrayWithQuote()</a> にtrimとダブルクォートの削除を実行した結果を返す。  <a href="#a28bf526a8816a3b9aa878a97c32c5ee3">More...</a><br /></td></tr>
 <tr class="separator:a28bf526a8816a3b9aa878a97c32c5ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dff61f612e895be8109a7fafc581cc0"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0">ac_split2</a> (const char *str, const char eq, const char delimiter, size_t maxSize)</td></tr>
 <tr class="memdesc:a3dff61f612e895be8109a7fafc581cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">"a=1;b;c=3;"の形式の文字列を分解する。 {"a", "1", "b","", "c", "3", NULL}  <a href="#a3dff61f612e895be8109a7fafc581cc0">More...</a><br /></td></tr>
@@ -148,10 +153,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:aaacf7c8377cdeb3f4e0d655d87c5dbc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">{キー名、値、...}の順で設定された配列のキー名に一致する値の位置を取得する。  <a href="#aaacf7c8377cdeb3f4e0d655d87c5dbc3">More...</a><br /></td></tr>
 <tr class="separator:aaacf7c8377cdeb3f4e0d655d87c5dbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4ad14969cc2bf5af7ae96a41d4e1a2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ac__bucket__utils_8h.html#aa4ad14969cc2bf5af7ae96a41d4e1a2e">ac_trimArray</a> (char **strArray)</td></tr>
-<tr class="memdesc:aa4ad14969cc2bf5af7ae96a41d4e1a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="「a=1;b;c=&quot;3;&quot;;」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...">ac_splitHttpHeaderValue()</a> の結果の配列の形式内の文字列の前後の空白を削除する。 例：{"a", " 1 ", "b ","", "c", "3", NULL}  <a href="#aa4ad14969cc2bf5af7ae96a41d4e1a2e">More...</a><br /></td></tr>
+<tr class="memdesc:aa4ad14969cc2bf5af7ae96a41d4e1a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="HTTPヘッダ値の key=value; 形式をパースして配列にして返す。   前後の空白が削除され、ダブルクォートが削除された文字列が返る。クォート内のエスケープ文字¥も削除される。   ac_spl...">ac_splitHttpHeaderValue()</a> の結果の配列の形式内の文字列の前後の空白を削除する。 例：{"a", " 1 ", "b ","", "c", "3", NULL}  <a href="#aa4ad14969cc2bf5af7ae96a41d4e1a2e">More...</a><br /></td></tr>
 <tr class="separator:aa4ad14969cc2bf5af7ae96a41d4e1a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e66bfbe8b40d1f20980a2d404fd18dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ac__bucket__utils_8h.html#a0e66bfbe8b40d1f20980a2d404fd18dd">ac_removeQuoteArray</a> (char **strArray, char quote, char escape)</td></tr>
-<tr class="memdesc:a0e66bfbe8b40d1f20980a2d404fd18dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="「a=1;b;c=&quot;3;&quot;;」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...">ac_splitHttpHeaderValue()</a> の結果の配列内の文字列の前後のクォートを削除する。 <br />
+<tr class="memdesc:a0e66bfbe8b40d1f20980a2d404fd18dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="HTTPヘッダ値の key=value; 形式をパースして配列にして返す。   前後の空白が削除され、ダブルクォートが削除された文字列が返る。クォート内のエスケープ文字¥も削除される。   ac_spl...">ac_splitHttpHeaderValue()</a> の結果の配列内の文字列の前後のクォートを削除する。 <br />
  先頭にquoteがある場合のみ実行される。それ以外は文字列を変更しない。 <br />
  また、先頭がquoteの場合はエスケープ文字のアンエスケープ（削除）も行う。 例：{"¥"a¥"", "¥"1 ", "b ","", "c", "3", NULL}
 ⇒結果：{"a", "1 ", "b ","", "c", "3", NULL}  <a href="#a0e66bfbe8b40d1f20980a2d404fd18dd">More...</a><br /></td></tr>
@@ -354,7 +359,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>要素の位置。strKeyArray[i]が目的の値になる。見つからなかったとき-1を返す。 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00459">459</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00467">467</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
 
 </div>
 </div>
@@ -490,7 +495,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="「a=1;b;c=&quot;3;&quot;;」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...">ac_splitHttpHeaderValue()</a> の結果の配列内の文字列の前後のクォートを削除する。 <br />
+<p><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="HTTPヘッダ値の key=value; 形式をパースして配列にして返す。   前後の空白が削除され、ダブルクォートが削除された文字列が返る。クォート内のエスケープ文字¥も削除される。   ac_spl...">ac_splitHttpHeaderValue()</a> の結果の配列内の文字列の前後のクォートを削除する。 <br />
  先頭にquoteがある場合のみ実行される。それ以外は文字列を変更しない。 <br />
  また、先頭がquoteの場合はエスケープ文字のアンエスケープ（削除）も行う。 例：{"¥"a¥"", "¥"1 ", "b ","", "c", "3", NULL}
 ⇒結果：{"a", "1 ", "b ","", "c", "3", NULL} </p>
@@ -503,7 +508,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="ac__bucket__utils_8h.html#aa4ad14969cc2bf5af7ae96a41d4e1a2e" title="ac_split2() や ac_splitHttpHeaderValue() の結果の配列の形式内の文字列の前後の空白を削除する。 例：{&quot;a&quot;, &quot; 1 &quot;, &quot;b &quot;,...">ac_trimArray()</a> のnoteも参照。 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00497">497</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00505">505</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
 
 </div>
 </div>
@@ -587,7 +592,7 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>KeyValueArrayタイプの配列{"a", "1", "b",NULL, "c", "3", NULL}のような配列が返る。free(ret)で解放できる。 <br />
  領域確保に失敗した場合はNULL。 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00421">421</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00429">429</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
 
 </div>
 </div>
@@ -599,6 +604,58 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">char** ac_splitHttpHeaderValue </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>seps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ac__this__is__class_8h.html#a1f7d9df2064ed227a7782d8e38181e51">AcBool</a>&#160;</td>
+          <td class="paramname"><em>isSplitEq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HTTPヘッダ値の key=value; 形式をパースして配列にして返す。 <br />
+ 前後の空白が削除され、ダブルクォートが削除された文字列が返る。クォート内のエスケープ文字¥も削除される。 <br />
+ <a class="el" href="ac__bucket__utils_8h.html#ae1744bb47a8d800ea8234e8f1b9f1dfb" title="「a=1;b;c=&quot;3;&quot;;」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...">ac_splitKeyValueArrayWithQuote()</a> にtrimとダブルクォートの削除を実行した結果を返す。 </p>
+<dl class="section return"><dt>Returns</dt><dd>KeyValueArrayタイプの配列{"a", "1", "b",NULL, "c", "3", NULL}のような配列が返る。free(ret)で解放できる。 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="ac__bucket__utils_8h.html#ae1744bb47a8d800ea8234e8f1b9f1dfb" title="「a=1;b;c=&quot;3;&quot;;」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...">ac_splitKeyValueArrayWithQuote</a> </dd>
+<dd>
+<a class="el" href="ac__bucket__utils_8h.html#aa4ad14969cc2bf5af7ae96a41d4e1a2e" title="ac_split2() や ac_splitHttpHeaderValue() の結果の配列の形式内の文字列の前後の空白を削除する。 例：{&quot;a&quot;, &quot; 1 &quot;, &quot;b &quot;,...">ac_trimArray</a> </dd>
+<dd>
+<a class="el" href="ac__bucket__utils_8h.html#a0e66bfbe8b40d1f20980a2d404fd18dd" title="ac_split2() や ac_splitHttpHeaderValue() の結果の配列内の文字列の前後のクォートを削除する。   先頭にquoteがある場合のみ実行される。それ以外は文字列を変更し...">ac_removeQuoteArray</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00362">362</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
+
+</div>
+</div>
+<a id="ae1744bb47a8d800ea8234e8f1b9f1dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1744bb47a8d800ea8234e8f1b9f1dfb">&#9670;&nbsp;</a></span>ac_splitKeyValueArrayWithQuote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char** ac_splitKeyValueArrayWithQuote </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -645,7 +702,7 @@ Variables</h2></td></tr>
  領域確保に失敗した場合はNULL。 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>trimはしない。 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00362">362</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00370">370</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
 
 </div>
 </div>
@@ -694,7 +751,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="「a=1;b;c=&quot;3;&quot;;」の形式の文字列を分解する。{名前1, 値1, 名前2, 値2, ...">ac_splitHttpHeaderValue()</a> の結果の配列の形式内の文字列の前後の空白を削除する。 例：{"a", " 1 ", "b ","", "c", "3", NULL} </p>
+<p><a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> や <a class="el" href="ac__bucket__utils_8h.html#a28bf526a8816a3b9aa878a97c32c5ee3" title="HTTPヘッダ値の key=value; 形式をパースして配列にして返す。   前後の空白が削除され、ダブルクォートが削除された文字列が返る。クォート内のエスケープ文字¥も削除される。   ac_spl...">ac_splitHttpHeaderValue()</a> の結果の配列の形式内の文字列の前後の空白を削除する。 例：{"a", " 1 ", "b ","", "c", "3", NULL} </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">strArray</td><td>[in]対象配列。 <br />
@@ -705,7 +762,7 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>開始ポインタの位置をずらし、後ろは連続する空白の最初の文字を¥0で置き変える。そのため、free()でそれぞれ開放することはできない。 <br />
  <a class="el" href="ac__bucket__utils_8h.html#a3dff61f612e895be8109a7fafc581cc0" title="&quot;a=1;b;c=3;&quot;の形式の文字列を分解する。 {&quot;a&quot;, &quot;1&quot;, &quot;b&quot;,&quot;&quot;, &quot;c&quot;, &quot;3&quot;, NULL}">ac_split2()</a> のreturn値のように他の領域に作成された文字列の位置のみをポイントした配列を入力にしなければならない。 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00472">472</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ac__bucket__utils_8c_source.html#l00480">480</a> of file <a class="el" href="ac__bucket__utils_8c_source.html">ac_bucket_utils.c</a>.</p>
 
 </div>
 </div>

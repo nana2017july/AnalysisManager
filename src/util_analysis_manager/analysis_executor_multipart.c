@@ -1,5 +1,5 @@
 /*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -50,19 +50,25 @@ static const char* gClassName_AnalysisExecutor_Multipart = "CAnalysisExecutor_Mu
 //------------------------------------------------------
 //------------------------------------------------------
 
+/**
+現在、解析している部分を表すステータス。
+*/
 typedef enum{
 	MultipartStatus_Header,
 	MultipartStatus_Body,
 	MultipartStatus_Boundary
 } MultipartStatus;
 
+/**
+private
+*/
 typedef struct {
 	CAnalysisExecutor_Super parentMember;
 	//将来使用予定
 	char* targetParamName;
-	///境界(boundary)のパーサ
+	///境界(boundary)のパーサ(境界までを解析する)
 	CAnalysisParser_Split* boundaryParser;
-	///ヘッダのパーサ
+	///ヘッダのパーサ(ヘッダ1行(\r\nまで)を解析する)
 	CAnalysisParser_HttpHeader* headerParser;
 	///現在の解析しているパート（ヘッダ部 or ボディ部）
 	MultipartStatus status;
@@ -176,8 +182,6 @@ static const AnalysisCommand CAnalysisExecutor_Multipart_pos(CAnalysisExecutor* 
 				//属性がマッチしていたら、名前を取得する
 				CAnalysisParser_HttpHeader_getValue((CAnalysisParser_HttpHeader*)parser, &str, &len);
 				char** ret = ac_splitHttpHeaderValue(str, ";", AC_TRUE, 4);
-				ac_trimArray(ret);
-				ac_removeQuoteArray(ret, '"', '\\');
 				AcBool isValueFile = AC_FALSE;
 				for(char** p = ret; *p != NULL; p += 2){
 					//"name"にマッチしたらコピー

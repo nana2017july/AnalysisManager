@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright 2017 the original author or authors.
+* Copyright 2019 the original author or authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -218,7 +218,6 @@ static apr_status_t my_input_filter(ap_filter_t* f, apr_bucket_brigade* in_bb,
 		if(contentTypeValue != NULL){
 			//分解
 			char** ary = ac_splitHttpHeaderValue(contentTypeValue, ";", AC_TRUE, 5);
-			ac_trimArray(ary);
 			int i = ac_getIndexFromKeyValueArray(ary, "boundary");
 			//boundaryが見つからない場合は返す
 			if(i == -1) return status;
